@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPIRITS — Solana will never die</title>
+
+    <!-- Font "a tema" (regal/cinematic) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span class="brand-name">SPIRITS</span>
+      </div>
+
+      <nav class="nav">
+        <a href="#utilities" class="nav-link">Utility 1</a>
+        <a href="#utilities" class="nav-link">Utility 2</a>
+        <a href="#utilities" class="nav-link">Utility 3</a>
+
+        <button id="copyCaBtn" class="nav-cta" type="button" title="Copia Contract Address">
+          Contract Address
+        </button>
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <button id="menuBtn" class="menu-btn" type="button" aria-label="Apri menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+      <a href="#utilities" class="mobile-link">Utility 1</a>
+      <a href="#utilities" class="mobile-link">Utility 2</a>
+      <a href="#utilities" class="mobile-link">Utility 3</a>
+      <button id="copyCaBtnMobile" class="mobile-cta" type="button">Contract Address</button>
+    </div>
+
+    <!-- Hero -->
+    <main class="page">
+      <section class="hero">
+        <div class="hero-bg"></div>
+
+        <div class="hero-inner">
+          <div class="hero-media">
+            <video
+              class="hero-video"
+              src="assets/video.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="auto"
+            ></video>
+
+            <div class="hero-overlay"></div>
+          </div>
+
+          <div class="hero-content">
+            <h1 id="heroTitle" class="hero-title">Solana will never die</h1>
+            <p class="hero-subtitle">
+              A lore-driven launch. No noise. Only the signal.
+            </p>
+
+            <div class="hero-actions">
+              <a id="buyBtn" class="primary-btn" href="#" target="_blank" rel="noreferrer">
+                Join SPIRITS
+              </a>
+
+              <a class="ghost-btn" href="#story">Read the narrative</a>
+            </div>
+
+            <div class="hero-meta">
+              <div class="meta-card">
+                <span class="meta-label">Network</span>
+                <span class="meta-value">Solana</span>
+              </div>
+              <div class="meta-card">
+                <span class="meta-label">Status</span>
+                <span class="meta-value">Preparing launch</span>
+              </div>
+              <div class="meta-card">
+                <span class="meta-label">Contract</span>
+                <span class="meta-value mono" id="caPreview">TBA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Narrative + images -->
+      <section id="story" class="section">
+        <div class="section-head">
+          <h2 class="section-title">The Narrative</h2>
+          <p class="section-desc">
+            Inseriremo qui il testo definitivo. Intanto ti ho messo una struttura “cinematica” già pronta.
+          </p>
+        </div>
+
+        <div class="story">
+          <article class="story-row">
+            <div class="story-text">
+              <h3>When the sky burns, the chain persists.</h3>
+              <p>
+                In a world of noise, SPIRITS is memory. A banner raised after the fall.
+                A reminder that the network is an idea — and ideas don’t die.
+              </p>
+            </div>
+            <div class="story-media">
+              <img src="assets/img1.jpg" alt="SPIRITS scene 1" loading="lazy" />
+            </div>
+          </article>
+
+          <article class="story-row reverse">
+            <div class="story-text">
+              <h3>The march is silent. The message is not.</h3>
+              <p>
+                The guardians don’t speak. They execute. They hold the line.
+                The only rule: keep moving forward.
+              </p>
+            </div>
+            <div class="story-media">
+              <img src="assets/img2.jpg" alt="SPIRITS scene 2" loading="lazy" />
+            </div>
+          </article>
+
+          <article class="story-row">
+            <div class="story-text">
+              <h3>After the wreckage, a flag.</h3>
+              <p>
+                A symbol in the smoke. Not hope — certainty.
+                The chain survives because the believers do.
+              </p>
+            </div>
+            <div class="story-media">
+              <img src="assets/img3.jpg" alt="SPIRITS scene 3" loading="lazy" />
+            </div>
+          </article>
+
+          <article class="story-row reverse">
+            <div class="story-text">
+              <h3>One banner. One direction.</h3>
+              <p>
+                The last frame is the first step.
+                From here, utilities will be revealed — one by one.
+              </p>
+            </div>
+            <div class="story-media">
+              <img src="assets/img4.jpg" alt="SPIRITS scene 4" loading="lazy" />
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Utilities placeholder -->
+      <section id="utilities" class="section">
+        <div class="section-head">
+          <h2 class="section-title">Utilities</h2>
+          <p class="section-desc">Placeholder per ora: qui metteremo le 3 utility quando le decidiamo.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Utility 1</h3>
+            <p>Descrizione breve. Focus: beneficio reale, zero fuffa.</p>
+          </div>
+          <div class="card">
+            <h3>Utility 2</h3>
+            <p>Descrizione breve. Può essere un tool / accesso / gating.</p>
+          </div>
+          <div class="card">
+            <h3>Utility 3</h3>
+            <p>Descrizione breve. Roadmap minimal, reveal progressivo.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <span class="mono">SPIRITS</span>
+          <span class="muted">© <span id="year"></span> — Solana will never die</span>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Toast -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
