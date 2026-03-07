@@ -2,7 +2,7 @@
 const CONFIG = {
   CONTRACT_ADDRESS: "TBA", // <-- metterai qui il CA (stringa completa)
   BUY_URL: "#",           // <-- metterai qui la URL di acquisto
-  HERO_TITLE: "Solana will never die" // <-- titolo modificabile
+  HERO_TITLE: "SOLVIVORS of the red market, Raising the SPIRITS of the fallen" // <-- titolo modificabile
 };
 
 // ====== Helpers ======
