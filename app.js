@@ -1,7 +1,7 @@
 // ====== CONFIG ======
 const CONFIG = {
-  CONTRACT_ADDRESS: "TBA", // <-- metterai qui il CA (stringa completa)
-  BUY_URL: "#",           // <-- metterai qui la URL di acquisto
+  CONTRACT_ADDRESS: "2EkuZAXc3v8PXBESWFfAoEfBczcyye2w8uQwuPpQpump", // <-- metterai qui il CA (stringa completa)
+  BUY_URL: "https://pump.fun/coin/2EkuZAXc3v8PXBESWFfAoEfBczcyye2w8uQwuPpQpump",           // <-- metterai qui la URL di acquisto
   HERO_TITLE: "SOLVIVORS of the red market, Raising the SPIRITS of the fallen" // <-- titolo modificabile
 };
 
