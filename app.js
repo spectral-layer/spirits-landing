@@ -1,13 +1,11 @@
-// ====== CONFIG ======
 const CONFIG = {
-  CONTRACT_ADDRESS: "2EkuZAXc3v8PXBESWFfAoEfBczcyye2w8uQwuPpQpump", // <-- metterai qui il CA (stringa completa)
-  BUY_URL: "https://pump.fun/coin/2EkuZAXc3v8PXBESWFfAoEfBczcyye2w8uQwuPpQpump",           // <-- metterai qui la URL di acquisto
-  HERO_TITLE: "SOLVIVORS of the red market, Raising the SPIRITS of the fallen" // <-- titolo modificabile
+  CONTRACT_ADDRESS: "2EkuZAXc3v8PXBESWFfAoEfBczcyye2w8uQwuPpQpump",
+  BUY_URL: "https://pump.fun/coin/2EkuZAXc3v8PXBESWFfAoEfBczcyye2w8uQwuPpQpump"
 };
 
-// ====== Helpers ======
 function toast(msg) {
   const el = document.getElementById("toast");
+  if (!el) return;
   el.textContent = msg;
   el.classList.add("show");
   clearTimeout(window.__toastTimer);
@@ -19,7 +17,6 @@ async function copyToClipboard(text) {
     await navigator.clipboard.writeText(text);
     return true;
   } catch {
-    // fallback
     const ta = document.createElement("textarea");
     ta.value = text;
     document.body.appendChild(ta);
@@ -40,49 +37,84 @@ function setHref(id, value) {
   if (el) el.href = value;
 }
 
-// ====== Init ======
-(function init(){
-  // year
-  document.getElementById("year").textContent = String(new Date().getFullYear());
+function shrink(addr) {
+  const a = String(addr);
+  if (a.length <= 12) return a;
+  return `${a.slice(0,4)}...${a.slice(-4)}`;
+}
 
-  // title + links + CA preview
-  setText("heroTitle", CONFIG.HERO_TITLE);
+function initHeroParallax() {
+  const heroInner = document.getElementById("heroInner");
+  const heroMedia = document.getElementById("heroMedia");
+
+  if (!heroInner || !heroMedia) return;
+  if (window.matchMedia("(max-width: 980px)").matches) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  let rafId = null;
+
+  heroInner.addEventListener("mousemove", (e) => {
+    const rect = heroInner.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+
+    const moveX = (x - 0.5) * 10;
+    const moveY = (y - 0.5) * 8;
+
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(() => {
+      heroMedia.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+  });
+
+  heroInner.addEventListener("mouseleave", () => {
+    if (rafId) cancelAnimationFrame(rafId);
+    heroMedia.style.transform = "";
+  });
+}
+
+(function init() {
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
   setHref("buyBtn", CONFIG.BUY_URL);
   setText("caPreview", CONFIG.CONTRACT_ADDRESS === "TBA" ? "TBA" : shrink(CONFIG.CONTRACT_ADDRESS));
 
-  // copy buttons
-  const copyBtns = [document.getElementById("copyCaBtn"), document.getElementById("copyCaBtnMobile")].filter(Boolean);
-  copyBtns.forEach(btn => {
+  const copyBtns = [
+    document.getElementById("copyCaBtn"),
+    document.getElementById("copyCaBtnMobile")
+  ].filter(Boolean);
+
+  copyBtns.forEach((btn) => {
     btn.addEventListener("click", async () => {
       if (!CONFIG.CONTRACT_ADDRESS || CONFIG.CONTRACT_ADDRESS === "TBA") {
         toast("Contract Address: TBA");
         return;
       }
       const ok = await copyToClipboard(CONFIG.CONTRACT_ADDRESS);
-      toast(ok ? "Contract Address copiato ✅" : "Copia non riuscita ❌");
+      toast(ok ? "Contract Address copied ✅" : "Copy failed ❌");
     });
   });
 
-  // mobile menu
   const menuBtn = document.getElementById("menuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
 
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("open");
-    mobileMenu.setAttribute("aria-hidden", mobileMenu.classList.contains("open") ? "false" : "true");
-  });
-
-  // close menu on click
-  mobileMenu.querySelectorAll("a,button").forEach(el => {
-    el.addEventListener("click", () => {
-      mobileMenu.classList.remove("open");
-      mobileMenu.setAttribute("aria-hidden", "true");
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+      mobileMenu.setAttribute(
+        "aria-hidden",
+        mobileMenu.classList.contains("open") ? "false" : "true"
+      );
     });
-  });
-})();
 
-function shrink(addr) {
-  const a = String(addr);
-  if (a.length <= 12) return a;
-  return `${a.slice(0,4)}...${a.slice(-4)}`;
-}
+    mobileMenu.querySelectorAll("a,button").forEach((el) => {
+      el.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        mobileMenu.setAttribute("aria-hidden", "true");
+      });
+    });
+  }
+
+  initHeroParallax();
+})();

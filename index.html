@@ -4,13 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOLVIVORS-SPIRITS</title>
-    <link rel="icon" type="image/png" href="favicon-v2.png">
-    <link rel="apple-touch-icon" href="favicon-v2.png">
-    <meta name="theme-color" content="#FBFBFA">
+    <link rel="icon" type="image/png" href="favicon-v2.png" />
+    <link rel="apple-touch-icon" href="favicon-v2.png" />
+    <meta name="theme-color" content="#FBFBFA" />
 
-    <!-- Font "a tema" (regal/cinematic) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -20,7 +19,6 @@
   </head>
 
   <body>
-    <!-- Top bar -->
     <header class="topbar">
       <div class="brand">
         <span class="brand-dot"></span>
@@ -37,13 +35,11 @@
         </button>
       </nav>
 
-      <!-- Mobile hamburger -->
       <button id="menuBtn" class="menu-btn" type="button" aria-label="Apri menu">
         <span></span><span></span><span></span>
       </button>
     </header>
 
-    <!-- Mobile menu -->
     <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
       <a href="#utilities" class="mobile-link">Utility 1</a>
       <a href="#utilities" class="mobile-link">Utility 2</a>
@@ -51,13 +47,12 @@
       <button id="copyCaBtnMobile" class="mobile-cta" type="button">Contract Address</button>
     </div>
 
-    <!-- Hero -->
     <main class="page">
       <section class="hero">
         <div class="hero-bg"></div>
 
-        <div class="hero-inner">
-          <div class="hero-media">
+        <div class="hero-inner" id="heroInner">
+          <div class="hero-media" id="heroMedia">
             <video
               class="hero-video"
               src="assets/video.mp4"
@@ -72,7 +67,9 @@
           </div>
 
           <div class="hero-content">
-            <h1 id="heroTitle" class="hero-title">SOLVIVORS of the red market, Raising the SPIRITS of the fallen</h1>
+            <h1 id="heroTitle" class="hero-title">
+            SOLVIVORS <span class="hero-small">of the red market, raising the</span> SPIRITS <span class="hero-small">of the fallen</span>
+            </h1>
             <p class="hero-subtitle">
               Original Solana memecoin and growing cult
             </p>
@@ -103,7 +100,6 @@
         </div>
       </section>
 
-      <!-- Story + images -->
       <section id="story" class="section">
         <div class="section-head">
           <h2 class="section-title">Story</h2>
@@ -185,42 +181,53 @@
               <img src="assets/img6.jpg" alt="SPIRITS scene 6" loading="lazy" />
             </div>
           </article>
-
-          <article class="story-row">
-            <div class="story-text">
-              <h3><strong>TOKENOMICS</strong></h3>
-            </div>
-            <div class="story-media">
-              <img src="assets/img7.jpg" alt="SPIRITS tokenomics" loading="lazy" />
-            </div>
-          </article>
         </div>
       </section>
 
-      <!-- Utilities -->
+      <section class="tokenomics-section">
+        <h2 class="tokenomics-title">TOKENOMICS</h2>
+
+        <div class="tokenomics-image">
+          <img src="assets/img7.jpg" alt="SPIRITS tokenomics" loading="lazy" />
+        </div>
+      </section>
+
       <section id="utilities" class="section">
-        <div class="section-head">
-          <h2 class="section-title">Utilities</h2>
-          <p class="section-desc">Placeholder per ora: qui metteremo le 3 utility quando le decidiamo.</p>
-        </div>
+  <div class="section-head">
+    <h2 class="section-title">Utilities</h2>
+  </div>
 
-        <div class="grid">
-          <div class="card">
-            <h3>Utility 1</h3>
-            <p>Coinflip - The community can bet their Spirits against other members keeping an active dynamic and winning chances.</p>
-          </div>
-          <div class="card">
-            <h3>Utility 2</h3>
-            <p>Descrizione breve. Può essere un tool / accesso / gating.</p>
-          </div>
-          <div class="card">
-            <h3>Roadmap</h3>
-            <p>Coming Soon</p>
-          </div>
-        </div>
-      </section>
+  <div class="utilities-stack">
+    <div class="card utility-featured">
+      <div class="utility-featured-text">
+        <h3>Utility 1</h3>
+        <p>
+          <strong>Coinflip</strong> - The community can bet their Spirits against other members keeping an active dynamic and winning chances.
+          <img
+            src="favicon-v2.png"
+            alt="SPIRITS icon"
+            style="width:16px; height:16px; vertical-align:middle; margin-left:6px; border-radius:3px;"
+          />
+        </p>
+      </div>
 
-      <!-- Footer -->
+      <div class="utility-featured-media">
+        <img src="assets/coinflip.jpg" alt="Coinflip utility preview" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Utility 2</h3>
+      <p>Descrizione breve. Può essere un tool / accesso / gating.</p>
+    </div>
+
+    <div class="card">
+      <h3>Roadmap</h3>
+      <p>Coming Soon</p>
+    </div>
+  </div>
+  </section>
+
       <footer class="footer">
         <div class="footer-inner">
           <span class="mono">SPIRITS</span>
@@ -229,7 +236,6 @@
       </footer>
     </main>
 
-    <!-- Toast -->
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
     <script src="app.js"></script>
