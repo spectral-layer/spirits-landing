@@ -1,181 +1,208 @@
 <!doctype html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOLVIVORS-SPIRITS</title>
-    <link rel="icon" type="image/png" href="favicon-v2.png" />
-    <link rel="apple-touch-icon" href="favicon-v2.png" />
-    <meta name="theme-color" content="#FBFBFA" />
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SOLVIVORS-SPIRITS</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+<link rel="icon" type="image/png" href="favicon-v2.png" />
+<link rel="apple-touch-icon" href="favicon-v2.png" />
+<meta name="theme-color" content="#FBFBFA" />
 
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <body>
-    <header class="topbar">
-      <div class="brand">
-        <span class="brand-dot"></span>
-        <span class="brand-name">SPIRITS</span>
-      </div>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
 
-      <nav class="nav">
-        <a href="#utilities" class="nav-link">Utility 1</a>
-        <a href="#utilities" class="nav-link">Utility 2</a>
-        <a href="#utilities" class="nav-link">Roadmap</a>
+<link rel="stylesheet" href="styles.css" />
+</head>
 
-        <button id="copyCaBtn" class="nav-cta" type="button" title="Copia Contract Address">
-          Contract Address
-        </button>
-      </nav>
+<body>
 
-      <button id="menuBtn" class="menu-btn" type="button" aria-label="Apri menu">
-        <span></span><span></span><span></span>
-      </button>
-    </header>
+<header class="topbar">
+<div class="brand">
+<img src="favicon-v2.png" alt="SPIRITS icon" class="brand-icon"/>
+<span class="brand-name">SPIRITS</span>
+</div>
 
-    <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
-      <a href="#utilities" class="mobile-link">Utility 1</a>
-      <a href="#utilities" class="mobile-link">Utility 2</a>
-      <a href="#utilities" class="mobile-link">Roadmap</a>
-      <button id="copyCaBtnMobile" class="mobile-cta" type="button">Contract Address</button>
-    </div>
+<nav class="nav">
+<a href="#utilities" class="nav-link">Utility 1</a>
+<a href="#utilities" class="nav-link">Utility 2</a>
+<a href="#utilities" class="nav-link">Roadmap</a>
 
-    <main class="page">
-      <section class="hero">
-        <div class="hero-bg"></div>
+<button id="copyCaBtn" class="nav-cta" type="button">Contract Address</button>
+</nav>
 
-        <div class="hero-inner" id="heroInner">
-          <div class="hero-media" id="heroMedia">
-            <video
-              class="hero-video"
-              src="assets/video.mp4"
-              autoplay
-              loop
-              muted
-              playsinline
-              preload="auto"
-            ></video>
+<button id="menuBtn" class="menu-btn" type="button">
+<span></span><span></span><span></span>
+</button>
+</header>
 
-            <div class="hero-overlay"></div>
-          </div>
+<div id="mobileMenu" class="mobile-menu">
+<a href="#utilities" class="mobile-link">Utility 1</a>
+<a href="#utilities" class="mobile-link">Utility 2</a>
+<a href="#utilities" class="mobile-link">Roadmap</a>
+<button id="copyCaBtnMobile" class="mobile-cta">Contract Address</button>
+</div>
 
-          <div class="hero-content">
-            <h1 id="heroTitle" class="hero-title">
-              SOLVIVORS <span class="hero-small">of the red market, raising the</span> SPIRITS <span class="hero-small">of the fallen</span>
-            </h1>
-            <p class="hero-subtitle">
-              Original Solana memecoin and growing cult
-            </p>
+<main class="page">
 
-            <div class="hero-actions">
-              <a id="buyBtn" class="primary-btn" href="#" target="_blank" rel="noreferrer">
-                Joint Spirits ✔️
-              </a>
+<section class="hero">
+<div class="hero-bg"></div>
 
-              <a class="ghost-btn" href="#story">Read the narrative</a>
-            </div>
+<div class="hero-inner" id="heroInner">
 
-            <div class="hero-meta">
-              <div class="meta-card">
-                <span class="meta-label">Network</span>
-                <span class="meta-value">Solana</span>
-              </div>
-              <div class="meta-card">
-                <span class="meta-label">Status</span>
-                <span class="meta-value">Preparing launch</span>
-              </div>
-              <div class="meta-card">
-                <span class="meta-label">Contract</span>
-                <span class="meta-value mono" id="caPreview">TBA</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+<div class="hero-media" id="heroMedia">
+<video class="hero-video" src="assets/video.mp4" autoplay loop muted playsinline></video>
+<div class="hero-overlay"></div>
+</div>
 
-      <section id="story" class="section story-section-single">
-        <div class="section-head">
-          <h2 class="section-title">Story</h2>
-        </div>
+<div class="hero-content">
 
-        <div class="story-single-wrap">
-          <div class="story-single-text">
-            <p>
-              The market fell quiet, but we stayed. Through empty charts and fading communities,
-              Solvivors kept trading, watching, waiting - not just for profit, but for those Spirits
-              that were lost along the way. We carry their trades in our volume, their conviction in
-              our holds, their names in every block that passes. We don't move forward to forget them.
-              We move forward so they were not the end.
-            </p>
-          </div>
+<h1 class="hero-title">
+SOLVIVORS <span class="hero-small">of the red market, raising the</span>
+SPIRITS <span class="hero-small">of the fallen</span>
+</h1>
 
-          <div class="story-single-image">
-            <img src="assets/img4.jpg" alt="SPIRITS story image" loading="lazy" />
-          </div>
-        </div>
-      </section>
+<p class="hero-subtitle">
+Original Solana memecoin and growing cult
+</p>
 
-      <section class="tokenomics-section">
-        <h2 class="tokenomics-title">TOKENOMICS</h2>
+<div class="hero-actions">
+<a id="buyBtn" class="primary-btn" href="#" target="_blank">Join Spirits ✔️</a>
+<a class="ghost-btn" href="#story">Read the narrative</a>
+</div>
 
-        <div class="tokenomics-image">
-          <img src="assets/img7.jpg" alt="SPIRITS tokenomics" loading="lazy" />
-        </div>
-      </section>
+<div class="hero-meta hero-meta-top">
 
-      <section id="utilities" class="section">
-        <div class="section-head">
-          <h2 class="section-title">Utilities</h2>
-        </div>
+<div class="meta-card">
+<span class="meta-label">Network</span>
+<span class="meta-value">Solana</span>
+</div>
 
-        <div class="utilities-stack">
-          <div class="card utility-featured">
-            <div class="utility-featured-text">
-              <h3>Utility 1</h3>
-              <p>
-                <strong>Coinflip</strong> - The community can bet their Spirits against other members keeping an active dynamic and winning chances.
-                <img
-                  src="favicon-v2.png"
-                  alt="SPIRITS icon"
-                  style="width:16px; height:16px; vertical-align:middle; margin-left:6px; border-radius:3px;"
-                />
-              </p>
-            </div>
+<div class="meta-card">
+<span class="meta-label">Status</span>
+<span class="meta-value">Preparing launch</span>
+</div>
 
-            <div class="utility-featured-media">
-              <img src="assets/coinflip.jpg" alt="Coinflip utility preview" loading="lazy" />
-            </div>
-          </div>
+</div>
 
-          <div class="card">
-            <h3>Utility 2</h3>
-            <p>Descrizione breve. Può essere un tool / accesso / gating.</p>
-          </div>
+<div class="hero-links">
 
-          <div class="card">
-            <h3>Roadmap</h3>
-            <p>Coming Soon</p>
-          </div>
-        </div>
-      </section>
+<a class="meta-link-btn"
+href="https://x.com/i/communities/2022852480111944121"
+target="_blank">
+Community X
+</a>
 
-      <footer class="footer">
-        <div class="footer-inner">
-          <span class="mono">SPIRITS</span>
-          <span class="muted">© <span id="year"></span> — Solana will never die</span>
-        </div>
-      </footer>
-    </main>
+<a class="meta-link-btn"
+href="https://t.me/solspirits"
+target="_blank">
+TG Channel
+</a>
 
-    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</div>
 
-    <script src="app.js"></script>
-  </body>
+</div>
+</div>
+</section>
+
+
+<section id="story" class="section story-section-single">
+
+<div class="section-head">
+<h2 class="section-title">Story</h2>
+</div>
+
+<div class="story-single-wrap">
+
+<div class="story-side-image story-side-image-left">
+<img src="assets/img8.png" alt="Left spirit"/>
+</div>
+
+<div class="story-single-text">
+<p>
+The market fell quiet, but we stayed. Through empty charts and fading communities,
+Solvivors kept trading, watching, waiting - not just for profit, but for those Spirits
+that were lost along the way. We carry their trades in our volume, their conviction in
+our holds, their names in every block that passes. We don't move forward to forget them.
+We move forward so they were not the end.
+</p>
+</div>
+
+<div class="story-side-image story-side-image-right">
+<img src="assets/img6.png" alt="Right spirit"/>
+</div>
+
+</div>
+
+<div class="story-single-image">
+<img src="assets/img4.jpg" alt="SPIRITS story image"/>
+</div>
+
+</section>
+
+
+<section class="tokenomics-section">
+<h2 class="tokenomics-title">TOKENOMICS</h2>
+
+<div class="tokenomics-image">
+<img src="assets/img7.jpg" alt="SPIRITS tokenomics"/>
+</div>
+</section>
+
+
+<section id="utilities" class="section">
+
+<div class="section-head">
+<h2 class="section-title">Utilities</h2>
+</div>
+
+<div class="utilities-stack">
+
+<div class="card utility-featured">
+
+<div class="utility-featured-text">
+<h3>Spirit Flip Game</h3>
+<p>
+<strong>Coinflip</strong> - The community can bet their Spirits against other members keeping an active dynamic and winning chances.
+<img src="favicon-v2.png"
+style="width:16px;height:16px;vertical-align:middle;margin-left:6px;border-radius:3px;">
+</p>
+</div>
+
+<div class="utility-featured-media">
+<img src="assets/coinflip.jpg" alt="Coinflip preview"/>
+</div>
+
+</div>
+
+<div class="card">
+<h3>Utility 2</h3>
+<p>Coming Soon</p>
+</div>
+
+<div class="card">
+<h3>Roadmap</h3>
+<p>Coming Soon</p>
+</div>
+
+</div>
+</section>
+
+
+<footer class="footer">
+<div class="footer-inner">
+<span class="mono">SPIRITS</span>
+<span class="muted">© <span id="year"></span> — Solana will never die</span>
+</div>
+</footer>
+
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+
+</body>
 </html>

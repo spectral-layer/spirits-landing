@@ -6,24 +6,46 @@ const CONFIG = {
 function toast(msg) {
   const el = document.getElementById("toast");
   if (!el) return;
+
   el.textContent = msg;
-  el.classList.add("show");
+  el.classList.remove("show");
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      el.classList.add("show");
+    });
+  });
+
   clearTimeout(window.__toastTimer);
-  window.__toastTimer = setTimeout(() => el.classList.remove("show"), 1400);
+  window.__toastTimer = setTimeout(() => {
+    el.classList.remove("show");
+  }, 1800);
 }
 
 async function copyToClipboard(text) {
   try {
-    await navigator.clipboard.writeText(text);
-    return true;
-  } catch {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch {}
+
+  try {
     const ta = document.createElement("textarea");
     ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    ta.style.left = "-9999px";
     document.body.appendChild(ta);
+    ta.focus();
     ta.select();
+    ta.setSelectionRange(0, ta.value.length);
     const ok = document.execCommand("copy");
-    ta.remove();
+    document.body.removeChild(ta);
     return ok;
+  } catch {
+    return false;
   }
 }
 
@@ -35,12 +57,6 @@ function setText(id, value) {
 function setHref(id, value) {
   const el = document.getElementById(id);
   if (el) el.href = value;
-}
-
-function shrink(addr) {
-  const a = String(addr);
-  if (a.length <= 12) return a;
-  return `${a.slice(0,4)}...${a.slice(-4)}`;
 }
 
 function initHeroParallax() {
@@ -78,7 +94,6 @@ function initHeroParallax() {
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
   setHref("buyBtn", CONFIG.BUY_URL);
-  setText("caPreview", CONFIG.CONTRACT_ADDRESS === "TBA" ? "TBA" : shrink(CONFIG.CONTRACT_ADDRESS));
 
   const copyBtns = [
     document.getElementById("copyCaBtn"),
@@ -91,6 +106,7 @@ function initHeroParallax() {
         toast("Contract Address: TBA");
         return;
       }
+
       const ok = await copyToClipboard(CONFIG.CONTRACT_ADDRESS);
       toast(ok ? "Contract Address copied ✅" : "Copy failed ❌");
     });
